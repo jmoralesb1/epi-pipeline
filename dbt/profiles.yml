@@ -1,0 +1,7 @@
+epi_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/epi.duckdb
+      threads: 4
