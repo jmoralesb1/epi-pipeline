@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_nhsn_hrd
+    description: "Staging model for CDC NHSN Weekly Hospital Respiratory Data"
+    columns:
+      - name: week_ending_date
+        description: "Week ending date"
+        tests:
+          - not_null
+      - name: jurisdiction
+        description: "US state or territory code"
+        tests:
+          - not_null
+      - name: resp_season
+        tests:
+          - not_null
+
+  - name: fct_respiratory_weekly
+    description: "Gold layer: national weekly respiratory illness metrics with trends"
+    columns:
+      - name: week_ending_date
+        tests:
+          - not_null
+          - unique
