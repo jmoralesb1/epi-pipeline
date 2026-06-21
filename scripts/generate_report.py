@@ -73,7 +73,7 @@ def main():
         FROM fct_respiratory_weekly ORDER BY week_ending_date DESC LIMIT 1
     """).fetchone()
 
-    ingested = con.execute('SELECT COUNT(*) FROM stg_nhsn_hrd').fetchone()[0]
+    ingested = con.execute('SELECT COUNT(*) FROM fct_respiratory_weekly').fetchone()[0]
     con.close()
 
     def summary_row(code, name):
