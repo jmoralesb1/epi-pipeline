@@ -35,8 +35,8 @@ jobs:
         run: python scripts/generate_report.py
       - name: Commit and push
         run: |
-          git config user.name "Claude"
-          git config user.email "noreply@anthropic.com"
+          git config user.name "epi-pipeline-bot"
+          git config user.email "actions@github.com"
           git add reports/ data/epi.duckdb
           if git diff --cached --quiet; then
             echo "Nothing new to commit."
